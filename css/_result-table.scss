@@ -1,0 +1,238 @@
+button {
+  margin: 0 0 1em 0.5em;
+}
+//ページタイトル
+.page-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  span {
+    display: block;
+    font-size: 24px;
+    margin-top: 10px;
+  }
+}
+//年月表記パート
+.date-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.date-recent {
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
+}
+.current-month {
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: 900;
+}
+.lastmonth_btn {
+  border: 0px;
+  width: 28px;
+  height: 28px;
+  background: url("http://nihonecology.local/wp-content/uploads/2023/02/date_yajirushi.png")
+    no-repeat;
+  background-size: cover;
+}
+.nextmonth_btn {
+  border: 0px;
+  width: 28px;
+  height: 28px;
+  background: url("http://nihonecology.local/wp-content/uploads/2023/02/date_yajirushi.png")
+    no-repeat;
+  background-size: cover;
+  transform: scale(-1, 1);
+}
+//年月指定プルダウン
+.date-pull {
+  display: flex;
+  align-items: flex-end;
+}
+.selectbox-005 {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.selectbox-005::after {
+  position: absolute;
+  right: 15px;
+  width: 10px;
+  height: 7px;
+  background-color: #757575;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.selectbox-005 select {
+  appearance: none;
+  min-width: 230px;
+  height: 2.6em;
+  padding: 0.4em calc(0.8em + 30px) 4px 0.8em;
+  border: none;
+  border-bottom: 2px solid #ff8140;
+  background-color: #fff;
+  color: #1b1b1b;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.selectbox-005 select:focus {
+  outline: none;
+}
+.button-002 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  margin: 0 auto;
+  padding: 0.4em 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff8140;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+.button-002:hover {
+  background-color: #ffb48f;
+}
+
+//検索フォーム
+.light-table-filter {
+  background-color: #f1f1f1;
+  padding: 8px 16px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 380px;
+}
+
+//テーブル
+.table-scroll {
+  overflow: scroll;
+  width: 200%;
+  height: 560px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.result_table {
+  font-size: 12px;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.result_table th {
+  color: white;
+  background: #ff8140;
+  border: 1px solid #fcac85;
+  border-bottom: 1px double #fcac85;
+  padding: 8px 12px;
+  font-weight: 500;
+}
+
+.sort-th {
+  cursor: pointer;
+}
+
+th.sort-th::after {
+  content: "⇅";
+}
+
+.result_table td {
+  border-bottom: 1px solid #fcac85;
+  border-left: 1px solid #fcac85;
+  border-right: 1px solid #fcac85;
+  vertical-align: top;
+  padding-top: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  // padding: 8px 12px;
+  text-align: center;
+  margin: 0 auto;
+}
+.result_table .td__submit {
+  padding: 8px 12px;
+}
+
+.result_table .td__reason {
+  max-width: 250px; /* 省略せずに表示するサイズを指定 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  &.active {
+    white-space: normal;
+    padding-bottom: 16px;
+    line-height: 1.5;
+  }
+  img {
+    display: block;
+    width: 12px;
+    float: right;
+  }
+}
+
+.result_table .td__post {
+  max-width: 200px; /* 省略せずに表示するサイズを指定 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  img{
+    width: 12px;
+    float: right;
+  }
+  &.active {
+    white-space: normal;
+    padding-bottom: 16px;
+    line-height: 1.5;
+  }
+}
+
+.apocard_icon {
+  display: flex;
+  justify-content: center;
+  // padding-top: 5px;
+  padding: 0;
+  img {
+    width: 20px;
+    // height: auto;
+  }
+}
+
+.result_table .td__audio__icon {
+  img{
+    cursor: pointer;
+  }
+}
+.result_table .rec_td {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  display: none;
+}
+
+.edit-btn {
+  background-color: #ff8140;
+  color: #fff;
+  padding: 6px 12px 8px 12px;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.result_table .td__audio__icon {
+  img {
+    width: 20px;
+    // display: none;
+  }
+}

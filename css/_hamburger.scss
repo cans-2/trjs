@@ -1,0 +1,212 @@
+@use "./mixin" as *;
+// ハンバーガーメニュー
+
+header > nav {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  z-index: 3;
+  width: 80px;
+  height: 80px;
+  margin-right: 16px;
+  z-index: 9991;
+  cursor: pointer;
+  // position: relative;
+
+  @include w768 {
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: -10px;
+  }
+  @include w599 {
+    right: -30px;
+  }
+
+  .MenuBtn-BarFrame {
+    position: relative;
+    display: none;
+    width: 40px;
+    height: 2px;
+    display: flex;
+  }
+}
+/* ナビ開いてる時のボタン */
+.ul-open {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(3, 3, 3, 0.5);
+  display: block;
+  overflow-y: hidden;
+}
+// 開いている時の位置固定
+.hamburger.active .MenuBtn-BarFrame {
+  position: fixed;
+}
+
+.hamburger .MenuBtn-BarFrame-FirstBar {
+  position: absolute;
+  top: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  transition: all 0.1s linear;
+}
+
+.hamburger .MenuBtn-BarFrame-SecondBar {
+  position: absolute;
+  top: -6px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  transition: all 0.3s linear;
+  transform: translateY(-8px) rotate(0deg);
+}
+
+.hamburger .MenuBtn-BarFrame-ThirdBar {
+  position: absolute;
+  top: 6px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  transition: all 0.3s linear;
+  transform: translateY(8px) rotate(0deg);
+}
+
+.hamburger.active .MenuBtn-BarFrame-FirstBar {
+  opacity: 0;
+}
+
+.hamburger.active .MenuBtn-BarFrame-SecondBar {
+  transform: translateY(0) rotate(45deg);
+  top: auto;
+  background: #fff;
+}
+
+.hamburger.active .MenuBtn-BarFrame-ThirdBar {
+  transform: translateY(0) rotate(-45deg);
+  top: auto;
+  background: #fff;
+}
+
+nav.hamburger__open {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  color: #000;
+  background: #fff;
+  text-align: center;
+  transform: translateX(100%);
+  transition: all 0.6s;
+  width: 100%;
+  // height: 100%;
+}
+
+// 開いている時のメニュー
+nav.hamburger__open ul {
+  background: #ff7208;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 65px;
+}
+
+/* このクラスを、jsで付与・削除する */
+nav.hamburger__open.active {
+  transform: translateX(0%);
+}
+
+// メニュー サイドバーから流用
+.hamburger__open-list {
+  .sidebar__item {
+    border-bottom: 5px solid #fff;
+    padding: 40px;
+    @include w599{
+      padding: 30px;
+    }
+  }
+  // a {
+  // }
+  p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    @include w599{
+      font-size: 24px;
+    }
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+.accordion {
+  &__ttl {
+    background-color: #ff7208;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 5px solid #fff;
+    padding: 40px;
+    @include w599{
+      font-size: 24px;
+      padding: 30px;
+      img{
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover {
+      opacity: 0.4;
+    }
+    &.is-active {
+      background-color: #000;
+      img {
+        transform: rotate(90deg);
+      }
+    }
+    img {
+      filter: invert(100%);
+      transform: rotate(-90deg);
+      margin-left: 24px;
+    }
+  }
+  &__cnt {
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s ease height;
+    p {
+      font-size: 32px;
+      color: #fff;
+      font-weight: bold;
+      border-bottom: 5px solid #fff;
+      padding: 40px;
+      background: #ff892e;
+      line-height: 1.6;
+      @include w599{
+        font-size: 24px;
+        padding: 30px;
+      }
+    }
+  }
+  &__inner {
+    padding: 20px;
+  }
+}

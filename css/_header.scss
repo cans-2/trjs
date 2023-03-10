@@ -1,0 +1,42 @@
+@use "../css/mixin" as *;
+
+header {
+  height: 80px;
+  display: flex;
+  padding-left: 2%;
+  position: relative;
+  .header-title img {
+    height: 100%;
+  }
+}
+.sidebar__btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 5px 5px 6px -4px #777777;
+  padding-top: 15px;
+  width: 25px;
+  height: 150px;
+  cursor: pointer;
+  @include w768 {
+    display: none;
+  }
+  img {
+    width: 50%;
+    display: block;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.sidebar__togglebtn {
+  img {
+    transform: rotate(180deg);
+    top: 45%;
+    left: 30%;
+  }
+}

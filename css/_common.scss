@@ -1,0 +1,32 @@
+@use "./mixin" as *;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+body {
+  background-color: #fffbf9;
+  font-family: "Noto Sans JP", sans-serif;
+}
+main {
+  padding: 20px 4% 40px 4%;
+}
+p {
+  font-size: 14px;
+}
+
+// 杉田追記ーーーーーーーーーーーーー
+
+.main__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.main {
+  width: 92%;
+  @include w768 {
+    width: 100%;
+  }
+}
+
+.main__toggle {
+  width: 100%;
+}
+// ーーーーーーーーーーーーーーーーー

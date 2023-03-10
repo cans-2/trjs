@@ -1,0 +1,28 @@
+@use "./result-table";
+@use "./header";
+@use "./footer";
+@use "./common";
+@use "./sidebar";
+@use "./hamburger";
+
+/* Theme Name: CansTheme */
+
+h1 {
+  color: rgb(139, 139, 139);
+}
+
+.searchbox {
+    position: relative;
+    margin: 30px auto;
+}
+
+.searchbox input[type="text"] {
+    width: 90%;
+}
+
+table {
+    border-collapse: collapse;
+  }
+  table th, table td {
+    border: solid 1px black;
+  }
